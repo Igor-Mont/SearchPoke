@@ -30,7 +30,13 @@
   ],
   "rules": {
     "prettier/prettier": "error",
+    "camelcase": "off",
+    "@typescript-eslint/camelcase": "off",
+    "jsx-a11y/control-has-associated-label": "off",
     "no-use-before-define": "off",
+    "click-events-have-key-events": "off",
+    "no-param-reassign": "off",
+    "no-noninteractive-element-interactions": "off",
     "react-hooks/rules-of-hooks": "error",
     "react-hooks/exhaustive-deps": "warn",
     "react/jsx-filename-extension": [
