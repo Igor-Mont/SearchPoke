@@ -1,46 +1,68 @@
-# Getting Started with Create React App
+<div align="center">
+  <h1>Poke Stats</h1>
+</div>
+<hr/>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<h2 align="center" >Usando Poke API para treinar consumo de API externas</h2>
+<h3 align="center">Nada melhor do que estudar com o que a gente já assitiu ou ainda assite né?!🌎</h3>
+<hr />
 
-## Available Scripts
+<h4 align="center">➡️<a target="_blank" href=""> Em breve faço deploy... </a>⬅️</h4>
+<hr/>
 
-In the project directory, you can run:
+<div align="center">
+<img src="https://img.shields.io/badge/npm-7.19.1-green" />
+<img src="https://img.shields.io/badge/API-POKE-red" />
+<img src="https://img.shields.io/badge/typescript-3.1.2-blue" />
+<img src="https://img.shields.io/badge/node-14.17.1-green" />
+<img src="https://img.shields.io/badge/react-17.0.2-9cf" />
+<img src="https://img.shields.io/badge/styledComponents-5.2.3-9cf" />
+</div>
+<hr/>
 
-### `yarn start`
+<h2> 🎬 Tecnologias</h2>
+  <p>obs: ainda estou na fase de construção</p>
+ 
+<ul>
+  <li><a target="_blank" href="https://reactjs.org/" >React</a> - Código base do projeto.</li>
+  <li><a target="_blank" href="https://styled-components.com/" >Styled-components</a> - Masterizar a componetização e estilização no projeto</li>
+  <li><a target="_blank" href="https://pokeapi.co/" >API Pokemon - para obter dados e mostrar na aplicação</li>
+</ul>
+<hr/>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+<h2> 🛠 Features</h2>
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+<p>Alguns dos recursos dessa aplicação:</p>
 
-### `yarn test`
+-   [ ] Listar todos os pokemons pela API;
+-   [ ] Botão de acesso para mais informações do pokemom selecionado;
+-   [ ] Background muda de acordo com o tipo do pokemon;
+-   [ ] Rotas via id do pokemon (poderia ser pelo nome... mass queria testar com id);
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<h2> 📬 Pré requisitos</h2>
 
-### `yarn build`
+Ferramentas necessárias para rodar o projeto na sua máquina:
+[Git](https://git-scm.com) e [Node.js](https://nodejs.org/en/). 
+Além disto é bom ter um editor para trabalhar com o código como [VSCode](https://code.visualstudio.com/)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+<h3> 🚩 Rodando o projeto:</h3>
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```bash
+# Clone este repositório
+$ git clone https://github.com/Igor-Mont/TestApiPoke
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+# Acesse a pasta do projeto no terminal/cmd
+$ cd TestApiPoke
 
-### `yarn eject`
+# Instale as dependências usando npm ou yarn
+$ npm install
+$ yarn
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+# Execute a aplicação em modo de desenvolvimento
+$ npm start
+$ yarn start
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+# O servidor inciará na porta:3000 - acesse http://localhost:3000
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+<!-- <h3>Deploy feito na <a href="https://vercel.com/new?utm_source=github&utm_medium=readme&utm_campaign=next-example">Vercel</a> 🖤</h3> -->
