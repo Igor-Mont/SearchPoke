@@ -6,11 +6,11 @@ import GlobalStyle from './styles/global';
 
 function App(): JSX.Element {
   return (
-    <BrowserRouter>
+    <BrowserRouter forceRefresh>
       <GlobalStyle />
       <Switch>
         <Route path="/" exact component={Home} />
-        <Route path="/pokemon/:id" exact component={Detail} />
+        <Route path="/pokemon/:id" component={Detail} />
       </Switch>
     </BrowserRouter>
   );

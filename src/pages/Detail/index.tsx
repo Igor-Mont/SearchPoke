@@ -1,5 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import {
+  Link,
+  Redirect,
+  useHistory,
+  useLocation,
+  useParams,
+} from 'react-router-dom';
 import { Box, Container } from './styles';
 
 type ParamProps = {
@@ -30,24 +36,24 @@ type DetailsProps = {
 };
 
 const initialState = {
-  name: 'Loading',
+  name: 'Loading...',
   sprites: {
     front_default:
-      'https://ak.picdn.net/shutterstock/videos/1039407446/thumb/1.jpg',
+      'https://img1.gratispng.com/20190117/hlw/kisspng-computer-icons-clip-art-web-page-portable-network-clipart-loading-spinner-static-5c403bdf6830b7.3906495115477135034268.jpg',
   },
   weight: 0,
   stats: [
     {
       base_stat: 0,
       stat: {
-        name: '...',
+        name: '',
       },
     },
   ],
   types: [
     {
       type: {
-        name: '....',
+        name: '',
       },
     },
   ],
@@ -75,6 +81,8 @@ const backgroundColorBasedTypes = {
 };
 
 function Detail(): JSX.Element {
+  const history = useHistory();
+  const location = useLocation();
   const { id } = useParams<ParamProps>();
   const [details, setDetails] = useState<DetailsProps>(initialState);
   useEffect(() => {
@@ -84,6 +92,21 @@ function Detail(): JSX.Element {
       setDetails(data);
     })();
   }, []);
+
+  useEffect(() => {
+    console.log(location.pathname);
+  }, [location]);
+
+  const handleNextPoke = () => {
+    const nextId = Number(id);
+    if (nextId >= 898) return;
+    history.push(`/pokemon/${nextId + 1}`);
+  };
+  const handlePerivousPoke = () => {
+    const nextId = Number(id);
+    if (nextId <= 1) return;
+    history.push(`/pokemon/${nextId - 1}`);
+  };
 
   return (
     <Container backgroundTypeColor={details.types[0].type.name}>
@@ -99,10 +122,56 @@ function Detail(): JSX.Element {
             )}
           </h2>
         </div>
-        <img src={details.sprites.front_default} alt={details.name} />
+        <div className="center">
+          <div
+            onKeyPress={() => 'asds'}
+            onClick={handlePerivousPoke}
+            role="button"
+            tabIndex={0}
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              className="feather feather-arrow-left"
+            >
+              <line x1="19" y1="12" x2="5" y2="12" />
+              <polyline points="12 19 5 12 12 5" />
+            </svg>
+          </div>
+          <img src={details.sprites.front_default} alt={details.name} />
+          <div
+            onKeyPress={() => 'asds'}
+            onClick={handleNextPoke}
+            role="button"
+            tabIndex={0}
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              className="feather feather-arrow-right"
+            >
+              <line x1="5" y1="12" x2="19" y2="12" />
+              <polyline points="12 5 19 12 12 19" />
+            </svg>
+          </div>
+        </div>
         <div className="infos">
           <h2>Weight: {details.weight}</h2>
-          {details.stats.map((v, i) => (
+          {details.stats.map(v => (
             <h2 key={v.stat.name}>
               {v.stat.name.charAt(0).toUpperCase() + v.stat.name.slice(1)}:{' '}
               {v.base_stat}

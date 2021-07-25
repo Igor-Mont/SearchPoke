@@ -85,6 +85,13 @@ export const Box = styled.div<BoxProps>`
   flex-direction: column;
   align-items: center;
 
+  .center {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+
   .name-type {
     display: flex;
     flex-direction: column;

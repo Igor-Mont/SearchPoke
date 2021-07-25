@@ -10,6 +10,7 @@ type PokeProps = {
 function Home(): JSX.Element {
   const [pokes, setPokes] = useState<PokeProps[]>([]);
 
+  const histoty = useHistory();
   useEffect(() => {
     (async function getPokes() {
       const response = await fetch(
@@ -24,7 +25,6 @@ function Home(): JSX.Element {
     document.body.style.background = 'red';
   };
 
-  const histoty = useHistory();
   console.log(pokes);
   return (
     <div>

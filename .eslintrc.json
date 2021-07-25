@@ -33,6 +33,12 @@
     "camelcase": "off",
     "@typescript-eslint/camelcase": "off",
     "jsx-a11y/control-has-associated-label": "off",
+    "jsx-a11y / no-static-element-transactions" : [ 
+      "off" , 
+      { 
+        "handlers" : []
+      } 
+    ],
     "no-use-before-define": "off",
     "click-events-have-key-events": "off",
     "no-param-reassign": "off",
