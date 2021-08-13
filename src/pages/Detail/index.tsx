@@ -1,12 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import {
-  Link,
-  Redirect,
-  useHistory,
-  useLocation,
-  useParams,
-} from 'react-router-dom';
+import { useHistory, useLocation, useParams } from 'react-router-dom';
 import { Box, Container } from './styles';
+import { firstLetterInUpper } from '../../utils/firstLetterUpperCase';
 
 type ParamProps = {
   id: string;
@@ -82,7 +77,6 @@ const backgroundColorBasedTypes = {
 
 function Detail(): JSX.Element {
   const history = useHistory();
-  const location = useLocation();
   const { id } = useParams<ParamProps>();
   const [details, setDetails] = useState<DetailsProps>(initialState);
   useEffect(() => {
@@ -92,10 +86,6 @@ function Detail(): JSX.Element {
       setDetails(data);
     })();
   }, []);
-
-  useEffect(() => {
-    console.log(location.pathname);
-  }, [location]);
 
   const handleNextPoke = () => {
     const nextId = Number(id);
@@ -108,13 +98,13 @@ function Detail(): JSX.Element {
     history.push(`/pokemon/${nextId - 1}`);
   };
 
+  const { name } = details;
+
   return (
     <Container backgroundTypeColor={details.types[0].type.name}>
       <Box backgroundTypeColor={details.types[0].type.name}>
         <div className="name-type">
-          <h1>
-            {details.name.charAt(0).toUpperCase() + details.name.slice(1)}
-          </h1>
+          <h1>{firstLetterInUpper(name)}</h1>
           <h2>
             Type(s):{' '}
             {details.types.map(v =>
@@ -173,8 +163,7 @@ function Detail(): JSX.Element {
           <h2>Weight: {details.weight}</h2>
           {details.stats.map(v => (
             <h2 key={v.stat.name}>
-              {v.stat.name.charAt(0).toUpperCase() + v.stat.name.slice(1)}:{' '}
-              {v.base_stat}
+              {firstLetterInUpper(v.stat.name)}: {v.base_stat}
             </h2>
           ))}
         </div>
