@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import BoxPoke from '../../components/BoxPoke';
-import { Loading } from './styles';
+import { Container } from './styles';
 
 type PokeProps = {
   name: string;
@@ -24,7 +24,11 @@ function Home(): JSX.Element {
   }, []);
 
   return (
-    <div>
+    <Container>
+      <div className="search">
+        <h1>Escolha o seu favorito para ver mais informações</h1>
+        <input type="text" placeholder="Procure o seu favorito" />
+      </div>
       {pokes.length > 300 ? (
         <BoxPoke
           onClick={() => histoty.push(`/pokemon/1`)}
@@ -47,9 +51,9 @@ function Home(): JSX.Element {
           );
         })
       ) : (
-        <Loading />
+        <div className="loading" />
       )}
-    </div>
+    </Container>
   );
 }
 
