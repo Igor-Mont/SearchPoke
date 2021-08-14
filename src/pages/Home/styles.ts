@@ -39,6 +39,9 @@ export const Container = styled.div`
   }
 
   .loading {
+    position: absolute;
+    top: 50%;
+    right: 50%;
     width: 50px;
     height: 50px;
     border: 6px solid #e5e5e5;
