@@ -11,5 +11,6 @@ export default createGlobalStyle`
     height: 100vh;
     display: flex;
     justify-content: center;
+    background-color: #e5e5e5;
   }
 `;

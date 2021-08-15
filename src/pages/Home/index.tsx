@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import BoxPoke from '../../components/BoxPoke';
-import { Container } from './styles';
+import { Container, GridPokes } from './styles';
 
 type PokeProps = {
   name: string;
@@ -40,29 +40,31 @@ function Home(): JSX.Element {
           placeholder="Procure o seu favorito"
         />
       </div>
-      {filteredPokes.length >= 1 ? (
-        (
-          <BoxPoke
-            onClick={() => histoty.push(`/pokemon/1`)}
-            name="Bullbasaur"
-            id={1}
-          />
-        ) &&
-        filteredPokes.map((value, i) => {
-          value.id = i + 2;
-
-          return (
+      <GridPokes>
+        {filteredPokes.length >= 1 ? (
+          (
             <BoxPoke
-              onClick={() => histoty.push(`/pokemon/${value.id}`)}
-              name={value.name}
-              id={value.id}
-              key={value.id}
+              onClick={() => histoty.push(`/pokemon/1`)}
+              name="Bullbasaur"
+              id={1}
             />
-          );
-        })
-      ) : (
-        <div className="loading" />
-      )}
+          ) &&
+          filteredPokes.map((value, i) => {
+            value.id = i + 2;
+
+            return (
+              <BoxPoke
+                onClick={() => histoty.push(`/pokemon/${value.id}`)}
+                name={value.name}
+                id={value.id}
+                key={value.id}
+              />
+            );
+          })
+        ) : (
+          <div className="loading" />
+        )}
+      </GridPokes>
     </Container>
   );
 }

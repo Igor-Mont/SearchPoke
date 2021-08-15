@@ -1,16 +1,24 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
+  position: relative;
   width: 100vw;
+  overflow-x: hidden;
   height: 100vh;
 
   .search {
+    background-color: #e5e5e5;
+    border-bottom: 2px solid #e51233;
     height: 150px;
     display: flex;
     flex-direction: column;
     gap: 16px;
     align-items: center;
     justify-content: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    right: 0;
 
     h1 {
       font-family: 'Roboto';
@@ -56,4 +64,12 @@ export const Container = styled.div`
       }
     }
   }
+`;
+
+export const GridPokes = styled.main`
+  background-color: #e5e5e5;
+  margin-top: 160px;
+  justify-content: center;
+  display: grid;
+  grid-template-columns: 300px 300px 300px 300px;
 `;
