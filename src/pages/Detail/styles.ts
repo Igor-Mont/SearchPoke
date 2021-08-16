@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 type BoxProps = {
-  backgroundTypeColor: string;
+  backgroundTypeColor?: string | undefined;
 };
 
 const backgroundColorBasedTypes = {

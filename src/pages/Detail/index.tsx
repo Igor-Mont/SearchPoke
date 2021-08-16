@@ -30,30 +30,6 @@ type DetailsProps = {
   types: TypesProps[];
 };
 
-const initialState = {
-  name: 'Loading...',
-  sprites: {
-    front_default:
-      'https://img1.gratispng.com/20190117/hlw/kisspng-computer-icons-clip-art-web-page-portable-network-clipart-loading-spinner-static-5c403bdf6830b7.3906495115477135034268.jpg',
-  },
-  weight: 0,
-  stats: [
-    {
-      base_stat: 0,
-      stat: {
-        name: '',
-      },
-    },
-  ],
-  types: [
-    {
-      type: {
-        name: '',
-      },
-    },
-  ],
-};
-
 const backgroundColorBasedTypes = {
   normal: '#A4A49F',
   grass: '#5EBC5E',
@@ -78,7 +54,7 @@ const backgroundColorBasedTypes = {
 function Detail(): JSX.Element {
   const history = useHistory();
   const { id } = useParams<ParamProps>();
-  const [details, setDetails] = useState<DetailsProps>(initialState);
+  const [details, setDetails] = useState<DetailsProps>();
   useEffect(() => {
     (async function getData() {
       const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}/`);
@@ -98,16 +74,14 @@ function Detail(): JSX.Element {
     history.push(`/pokemon/${nextId - 1}`);
   };
 
-  const { name } = details;
-
   return (
-    <Container backgroundTypeColor={details.types[0].type.name}>
-      <Box backgroundTypeColor={details.types[0].type.name}>
+    <Container backgroundTypeColor={details?.types[0].type.name}>
+      <Box backgroundTypeColor={details?.types[0].type.name}>
         <div className="name-type">
-          <h1>{firstLetterInUpper(name)}</h1>
+          <h1>{firstLetterInUpper(details?.name)}</h1>
           <h2>
             Type(s):{' '}
-            {details.types.map(v =>
+            {details?.types.map(v =>
               details.types.length > 1 ? `${v.type.name} | ` : v.type.name,
             )}
           </h2>
@@ -135,7 +109,7 @@ function Detail(): JSX.Element {
               <polyline points="12 19 5 12 12 5" />
             </svg>
           </div>
-          <img src={details.sprites.front_default} alt={details.name} />
+          <img src={details?.sprites.front_default} alt={details?.name} />
           <div
             onKeyPress={() => 'asds'}
             onClick={handleNextPoke}
@@ -160,8 +134,8 @@ function Detail(): JSX.Element {
           </div>
         </div>
         <div className="infos">
-          <h2>Weight: {details.weight}</h2>
-          {details.stats.map(v => (
+          <h2>Weight: {details?.weight}</h2>
+          {details?.stats.map(v => (
             <h2 key={v.stat.name}>
               {firstLetterInUpper(v.stat.name)}: {v.base_stat}
             </h2>

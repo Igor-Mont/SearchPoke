@@ -29,6 +29,8 @@
     "prettier"
   ],
   "rules": {
+    "prefer-const": "off",
+    "no-shadow": "off",
     "prettier/prettier": "error",
     "camelcase": "off",
     "@typescript-eslint/camelcase": "off",
