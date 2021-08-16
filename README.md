@@ -7,7 +7,7 @@
 <h3 align="center">Nada melhor do que estudar com o que a gente já assitiu ou ainda assite né?!🌎</h3>
 <hr />
 
-<h4 align="center">➡️<a target="_blank" href=""> Em breve faço deploy... </a>⬅️</h4>
+<h4 align="center">➡️<a target="_blank" href="https://search-poke.vercel.app/"> Clique aqui para ir ao site </a>⬅️</h4>
 <hr/>
 
 <div align="center">
@@ -37,6 +37,7 @@
 -   [ ] Listar todos os pokemons pela API;
 -   [ ] Botão de acesso para mais informações do pokemom selecionado;
 -   [ ] Background muda de acordo com o tipo do pokemon;
+-   [ ] Filtrar pokemon via nome;
 -   [ ] Rotas via id do pokemon (poderia ser pelo nome... mass queria testar com id);
 
 <h2> 📬 Visão geral do projeto</h2>
