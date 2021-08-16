@@ -28,7 +28,6 @@ export const Container = styled.div`
   align-items: center;
   justify-content: space-between;
   padding: 8px;
-  margin-bottom: 8px;
   border-radius: 16px;
   background-color: #e51233;
 

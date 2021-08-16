@@ -46,7 +46,6 @@ function Home(): JSX.Element {
             <BoxPoke
               onClick={() => histoty.push(`/pokemon/1`)}
               name="Bullbasaur"
-              id={1}
             />
           ) &&
           filteredPokes.map((value, i) => {
@@ -56,7 +55,6 @@ function Home(): JSX.Element {
               <BoxPoke
                 onClick={() => histoty.push(`/pokemon/${value.id}`)}
                 name={value.name}
-                id={value.id}
                 key={value.id}
               />
             );

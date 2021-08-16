@@ -1,15 +1,14 @@
-import React from 'react';
+import React, { memo } from 'react';
 import { firstLetterInUpper } from '../../utils/firstLetterUpperCase';
 
 import { Container } from './styles';
 
 type BoxPokeTypes = {
   name: string;
-  id: number;
   onClick(): void;
 };
 
-function BoxPoke({ name, id, onClick }: BoxPokeTypes): JSX.Element {
+function BoxPoke({ name, onClick }: BoxPokeTypes): JSX.Element {
   return (
     <Container>
       <h1>{firstLetterInUpper(name)}</h1>

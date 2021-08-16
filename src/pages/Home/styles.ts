@@ -21,6 +21,7 @@ export const Container = styled.div`
     right: 0;
 
     h1 {
+      text-align: center;
       font-family: 'Roboto';
       font-weight: 500;
     }
@@ -64,12 +65,31 @@ export const Container = styled.div`
       }
     }
   }
+
+  @media (max-width: 615px) {
+    .search {
+      h1 {
+        font-size: 20px;
+      }
+    }
+  }
 `;
 
 export const GridPokes = styled.main`
   background-color: #e5e5e5;
   margin-top: 160px;
   justify-content: center;
+  gap: 16px 32px;
   display: grid;
-  grid-template-columns: 300px 300px 300px 300px;
+  grid-template-columns: 250px 250px 250px 250px;
+
+  @media (max-width: 1228px) {
+    grid-template-columns: 250px 250px 250px;
+  }
+  @media (max-width: 925px) {
+    grid-template-columns: 250px 250px;
+  }
+  @media (max-width: 615px) {
+    grid-template-columns: 250px;
+  }
 `;
