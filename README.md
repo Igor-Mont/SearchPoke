@@ -39,6 +39,19 @@
 -   [ ] Background muda de acordo com o tipo do pokemon;
 -   [ ] Rotas via id do pokemon (poderia ser pelo nome... mass queria testar com id);
 
+<h2> 📬 Visão geral do projeto</h2>
+
+<h3>Home</h3>
+<img src="./screenshots/home.png" />
+<h3>Search</h3>
+<img src="./screenshots/search.png" />
+<h3>Info Charizard</h3>
+<img src="./screenshots/info.png" />
+<h3>Info Blastoise</h3>
+<img src="./screenshots/info2.png" />
+<h3>Info Venusaur</h3>
+<img src="./screenshots/info3.png" />
+
 <h2> 📬 Pré requisitos</h2>
 
 Ferramentas necessárias para rodar o projeto na sua máquina:
